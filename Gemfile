@@ -10,6 +10,10 @@ group :development do
   gem 'rspec-rails', '~> 2.13'
   gem 'guard-rspec'
   gem 'guard-bundler', require: false
+
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test do
