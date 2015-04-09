@@ -9,7 +9,7 @@ describe ".StaticPages" do
     it { should have_title(full_title(page_title)) }
   end
 
-  describe "#Home page" do
+  describe "#Home" do
     before { visit root_path }
     let(:heading) { 'Sample App' }
     let(:page_title) { '' }
@@ -18,7 +18,7 @@ describe ".StaticPages" do
     it { should_not have_title('| Home') }
   end
 
-  describe "#Help page" do
+  describe "#Help" do
     before { visit help_path }
     let(:heading) { 'Help' }
     let(:page_title) { 'Help' }
@@ -26,10 +26,10 @@ describe ".StaticPages" do
     it_should_behave_like "all static pages"
   end
 
-  describe "#About page" do
+  describe "#About" do
     before { visit about_path }
-    let(:heading) { 'About' }
-    let(:page_title) { 'About' }
+    let(:heading) { 'About Us' }
+    let(:page_title) { 'About Us' }
 
     it_should_behave_like "all static pages"
   end
@@ -40,5 +40,21 @@ describe ".StaticPages" do
     let(:page_title) { 'Contact' }
 
     it_should_behave_like "all static pages"
+  end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    expect(page).to have_title(full_title('About Us'))
+    click_link "Help"
+    expect(page).to have_title(full_title('Help'))
+    click_link "Contact"
+    expect(page).to have_title(full_title('Contact'))
+    click_link "Home"
+    expect(page).to have_title(full_title(''))
+    click_link "sample app"
+    expect(page).to have_title(full_title(''))
+    click_link "Sign up now!"
+    expect(page).to have_title(full_title('Sign up'))
   end
 end
