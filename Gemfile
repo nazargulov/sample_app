@@ -23,6 +23,8 @@ group :test do
   gem 'capybara'
 
   gem 'libnotify'
+
+  gem 'factory_girl_rails', '4.5.0'
 end
 
 # Use SCSS for stylesheets
