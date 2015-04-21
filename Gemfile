@@ -25,6 +25,9 @@ group :test do
   gem 'libnotify'
 
   gem 'factory_girl_rails', '4.5.0'
+
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 # Use SCSS for stylesheets
