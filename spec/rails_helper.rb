@@ -48,6 +48,8 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
     config.include Capybara::DSL
+
+    config.include Rails.application.routes.url_helpers
   end
 end
 
