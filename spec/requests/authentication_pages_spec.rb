@@ -17,7 +17,7 @@ RSpec.describe 'Authentication', type: :request do
       it { should have_error_message('Invalid')}
 
       describe 'after visiting another page' do
-        before { click_link 'Home' }
+        before { click_home }
 
         it { should_not have_error_message('Invalid')}
       end
@@ -33,7 +33,7 @@ RSpec.describe 'Authentication', type: :request do
       it { should_not have_link('Sign in',   href: signin_path) }
 
       describe "followed by signout" do
-        before { click_link "Sign out" }
+        before { click_signout }
 
         it { should have_link('Sign in') }
       end

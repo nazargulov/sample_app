@@ -44,17 +44,17 @@ describe ".StaticPages" do
 
   it "should have the right links on the layout" do
     visit root_path
-    click_link "About"
+    click_about
     expect(page).to have_title(full_title('About Us'))
-    click_link "Help"
+    click_help
     expect(page).to have_title(full_title('Help'))
-    click_link "Contact"
+    click_contact
     expect(page).to have_title(full_title('Contact'))
-    click_link "Home"
+    click_home
     expect(page).to have_title(full_title(''))
-    click_link "sample app"
+    click_sampleapp
     expect(page).to have_title(full_title(''))
-    click_link "Sign up now!"
+    click_signup
     expect(page).to have_title(full_title('Sign up'))
   end
 end
