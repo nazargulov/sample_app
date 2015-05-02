@@ -46,7 +46,7 @@ def fill_in_user(user)
   fill_in "Name", with: user.name
   fill_in "Email", with: user.email
   fill_in "Password", with: user.password
-  fill_in "Confirmation", with: user.password_confirmation
+  fill_in "user_password_confirmation", with: user.password_confirmation
 
 end
 
