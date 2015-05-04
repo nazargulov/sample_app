@@ -24,6 +24,7 @@ end
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
+  gem 'rspec-its'
 
   gem 'libnotify'
 
