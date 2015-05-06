@@ -62,6 +62,7 @@ RSpec.describe "User Pages", type: :request do
     it { should have_title(user.name) }
 
     describe "micropost" do
+
       it { should have_content(m1.content) }
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
